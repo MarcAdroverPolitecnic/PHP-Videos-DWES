@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <tit>Demo</tit>
+    <title>Demo</title>
 </head>
 <body>
 
-<h1>Hola Mundo</h1>
+<h1>
+    <?php
+    echo "Hello World";
+    ?>
+</h1>
 
 </body>
 </html>
