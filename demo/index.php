@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
-    <style>
-        body{
-            display: grid;
-            place-items: center;
-            height: 100vh;
-            font-family: sans-serif;
-        }
-    </style>
 </head>
 <body>
-     <?php
-            $nom = "Materia Oscura!";
-            $llegit = false;
 
+    <h1> Llibres Recomenats </h1>
 
-     if ($llegit) {
-         $missatge = "Has llegit " . $nom;
-     } else {
-         $missatge = "NO Has llegit " . $nom;
-     }
+    <?php
+        $llibres = [
+            "Do Androids Dream of Electronic Sheep",
+            "The Langoliers",
+            "Hail Mary"
+            ];
+    ?>
 
+    <ul>
+        <?php foreach ($llibres as $llibre){
+            echo "<li>" . $llibre . "</li>";
+        }
 
-     ?>
-
-    <h1>
-        <?php echo $missatge; ?>
-        <?= $missatge ?>
-
-    </h1>
+        ?>
+    </ul>
 
 </body>
 </html>
