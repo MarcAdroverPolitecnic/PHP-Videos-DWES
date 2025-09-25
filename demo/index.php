@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
+    <style>
+        body{
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
+     <?php
+            $nom = "Materia Oscura!";
+            $llegit = false;
 
-<h1>
-    <?php
-    $saludo = "Hola";
+     ?>
 
-    echo "$saludo Mundo!!!";   /*Amb comilles dobles simplement mostra per pantalla Hola Mundo!!!
-                                però si s'usen comilles simples es mostra $saludo Mundo!!! */
+    <h1>
+        <?php
+            if($llegit){
+                echo "Has llegit " . $nom;
+            }
+        ?>
 
-    ?>
-</h1>
+    </h1>
 
 </body>
 </html>
