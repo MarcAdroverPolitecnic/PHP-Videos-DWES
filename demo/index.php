@@ -9,7 +9,10 @@
 <h1>
     <?php
     $saludo = "Hola";
-    echo $saludo . "World";
+
+    echo "$saludo Mundo!!!";   /*Amb comilles dobles simplement mostra per pantalla Hola Mundo!!!
+                                però si s'usen comilles simples es mostra $saludo Mundo!!! */
+
     ?>
 </h1>
 
