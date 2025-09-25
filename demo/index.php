@@ -17,11 +17,11 @@
     ?>
 
     <ul>
-        <?php foreach ($llibres as $llibre){
-            echo "<li>" . $llibre . "</li>";
-        }
+        <?php foreach ($llibres as $llibre) : ?>
+            <li> <?= $llibre ?></li>
 
-        ?>
+        <?php endforeach; ?>
+
     </ul>
 
 </body>
