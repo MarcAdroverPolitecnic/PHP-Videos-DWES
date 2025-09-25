@@ -17,14 +17,19 @@
             $nom = "Materia Oscura!";
             $llegit = false;
 
+
+     if ($llegit) {
+         $missatge = "Has llegit " . $nom;
+     } else {
+         $missatge = "NO Has llegit " . $nom;
+     }
+
+
      ?>
 
     <h1>
-        <?php
-            if($llegit){
-                echo "Has llegit " . $nom;
-            }
-        ?>
+        <?php echo $missatge; ?>
+        <?= $missatge ?>
 
     </h1>
 
