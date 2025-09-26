@@ -30,30 +30,28 @@
         ]
     ];
 
-    function filtrarPerAurtor(){
-        //
+    function filtrarPerAutor($llibres, $autor) {
+        $llibresFiltrats = [];
 
+        foreach ($llibres as $llibre){
+            if($llibre['autor'] === $autor){
+                $llibresFiltrats[] = $llibre;
+            }
+        }
+        return $llibresFiltrats;
     }
-
-
 
     ?>
 
     <ul>
-        <?php foreach ($llibres as $llibre) : ?>
-            <?php if($llibre['autor'] === 'Andy Wair') : ?>
+        <?php foreach (filtrarPerAutor($llibres, 'Philip k. Dick') as $llibre) : ?>
             <li>
                 <a href="<?= $llibre['urlDeCompra'] ?>">
                     <?= $llibre['nom']; ?> (<?= $llibre['anyPublicacio'] ?>)
                 </a>
             </li>
-            <?php endif; ?>
         <?php endforeach; ?>
     </ul>
-
-    <p>
-        <?= filtrarPerAutor(); ?>
-    </p>
 
 </body>
 </html>
