@@ -30,7 +30,7 @@
         ]
     ];
 
-    $filtrarPerAutor = function ($llibres, $autor) {
+    function filtrarPerAutor($llibres, $autor) {
         $llibresFiltrats = [];
 
         foreach ($llibres as $llibre){
@@ -39,14 +39,12 @@
             }
         }
         return $llibresFiltrats;
-    };
-
-    $llibresFiltrats = $filtrarPerAutor($llibres, 'Philip k. Dick');
+    }
 
     ?>
 
     <ul>
-        <?php foreach ($llibresFiltrats as $llibre) : ?>
+        <?php foreach (filtrarPerAutor($llibres, 'Philip k. Dick') as $llibre) : ?>
             <li>
                 <a href="<?= $llibre['urlDeCompra'] ?>">
                     <?= $llibre['nom']; ?> (<?= $llibre['anyPublicacio'] ?>)
