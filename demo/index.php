@@ -11,21 +11,27 @@
     <?php
         $llibres = [
             [
-                'Do Androids Dream of Electric Sheep',
-                'Philip k. Dick',
-                'http://example.com'
+                'nom' => 'Do Androids Dream of Electric Sheep',
+                'autor' => 'Philip k. Dick',
+                'urlDeCompra' => 'http://example.com'
             ],
             [
-                'Hail Mary',
-                'Andy Wair',
-                'http://example.com'
+                'nom' => 'Hail Mary',
+                'autor' => 'Andy Wair',
+                'urlDeCompra' => 'http://example.com'
             ]
         ];
     ?>
 
-    <p>
-        <?= $llibres[1]?>
-    </p>
+    <ul>
+        <?php foreach ($llibres as $llibre) : ?>
+        <li>
+            <a href="<?= $llibre['urlDeCompra'] ?>">
+                <?= $llibre['nom']; ?>
+            </a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
 
 </body>
 </html>
