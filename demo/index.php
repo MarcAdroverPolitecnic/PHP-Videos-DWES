@@ -9,29 +9,51 @@
 <h1> Llibres Recomenats </h1>
 
     <?php
-        $llibres = [
-            [
-                'nom' => 'Do Androids Dream of Electric Sheep',
-                'autor' => 'Philip k. Dick',
-                'urlDeCompra' => 'http://example.com'
-            ],
-            [
-                'nom' => 'Hail Mary',
-                'autor' => 'Andy Wair',
-                'urlDeCompra' => 'http://example.com'
-            ]
-        ];
+    $llibres = [
+        [
+            'nom' => 'Do Androids Dream of Electric Sheep',
+            'autor' => 'Philip k. Dick',
+            'anyPublicacio' => '1968',
+            'urlDeCompra' => 'http://example.com'
+        ],
+        [
+            'nom' => 'Hail Mary',
+            'autor' => 'Andy Wair',
+            'anyPublicacio' => '2021',
+            'urlDeCompra' => 'http://example.com'
+        ],
+        [
+            'nom' => 'The Martian',
+            'autor' => 'Andy Wair',
+            'anyPublicacio' => '2011',
+            'urlDeCompra' => 'http://example.com'
+        ]
+    ];
+
+    function filtrarPerAurtor(){
+        //
+
+    }
+
+
+
     ?>
 
     <ul>
         <?php foreach ($llibres as $llibre) : ?>
-        <li>
-            <a href="<?= $llibre['urlDeCompra'] ?>">
-                <?= $llibre['nom']; ?>
-            </a>
-        </li>
+            <?php if($llibre['autor'] === 'Andy Wair') : ?>
+            <li>
+                <a href="<?= $llibre['urlDeCompra'] ?>">
+                    <?= $llibre['nom']; ?> (<?= $llibre['anyPublicacio'] ?>)
+                </a>
+            </li>
+            <?php endif; ?>
         <?php endforeach; ?>
     </ul>
+
+    <p>
+        <?= filtrarPerAutor(); ?>
+    </p>
 
 </body>
 </html>
