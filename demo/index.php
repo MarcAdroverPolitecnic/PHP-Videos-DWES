@@ -30,18 +30,21 @@
         ]
     ];
 
-    $filtrarPerAutor = function ($llibres, $autor) {
-        $llibresFiltrats = [];
+        function filtro($items, $fn) {
 
-        foreach ($llibres as $llibre){
-            if($llibre['autor'] === $autor){
-                $llibresFiltrats[] = $llibre;
+            $itemsFiltrats = [];
+
+            foreach ($items as $item){
+                if($fn($item)){
+                    $itemsFiltrats[] = $item;
+                }
             }
-        }
-        return $llibresFiltrats;
-    };
+            return $itemsFiltrats;
+        };
 
-    $llibresFiltrats = $filtrarPerAutor($llibres, 'Philip k. Dick');
+        $llibresFiltrats = filtro($llibres, function ($llibre){
+            return $llibre['anyPublicacio'] >= 2012;
+        });
 
     ?>
 
