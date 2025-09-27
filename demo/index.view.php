@@ -8,15 +8,17 @@
 
 <h1> Llibres Recomenats </h1>
 
-<ul>
-    <?php foreach ($llibresFiltrats as $llibre) : ?>
-        <li>
-            <a href="<?= $llibre['urlDeCompra'] ?>">
-                <?= $llibre['nom']; ?> (<?= $llibre['anyPublicacio'] ?>)
-            </a>
-        </li>
-    <?php endforeach; ?>
-</ul>
+
+    <ul>
+        <?php foreach ($llibresFiltrats as $llibre) : ?>
+            <li>
+                <a href="<?= $llibre['urlDeCompra'] ?>">
+                    <?= $llibre['nom']; ?> (<?= $llibre['anyPublicacio'] ?>)
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 
 </body>
 </html>
+
