@@ -8,10 +8,9 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                        <a href="/" aria-current="page" class="<?php if($_SERVER['REQUEST_URI'] === '/'){ echo 'bg-gray-900 text-white';} ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300">Home</a>
-                        <a href="/about.php" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
-                        <a href="/contact.php" class="text-gray-300 hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
-                        <a href="/contact.php" class="text-gray-300 hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Testing</a>
+                        <a href="/" aria-current="page" class="<?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="/about.php" class="<?= urlIs('/about.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
+                        <a href="/contact.php" class="<?= urlIs('/contact.php') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> text-gray-300 hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
 
                     </div>
                 </div>

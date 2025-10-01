@@ -2,6 +2,6 @@
 
 $heading = "About";
 
-echo $_SERVER['REQUEST_URI'];
+    require 'functions.php';
 
     require "views/about.view.php";
