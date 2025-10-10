@@ -3,9 +3,10 @@
 require 'functions.php';
 require 'Database.php';
 
-//Connect to the database and, execute a query
 
-    $db = new Database();
+$config = require ('config.php');
+
+    $db = new Database($config['database']);
     $post = $db -> query("select * from posts") -> fetchAll();
 
     dd($post);
