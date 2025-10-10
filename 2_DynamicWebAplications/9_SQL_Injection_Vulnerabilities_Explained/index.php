@@ -10,11 +10,9 @@ $config = require ('config.php');
 
     $id = $_GET['id'];
 
-    $query = "select * from posts where id = {$id}";
+    $query = "select * from posts where id = ?";
 
-    dd($query);
-
-    $post = $db -> query($query) -> fetch();
+    $post = $db -> query($query, [$id]) -> fetch();
 
     dd($post);
 
