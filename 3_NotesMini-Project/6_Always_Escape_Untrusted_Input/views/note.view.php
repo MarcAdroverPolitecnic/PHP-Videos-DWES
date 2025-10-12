@@ -9,7 +9,7 @@
                     <a href="/notes" class="text-blue-500 underline ">Tornar a Notes</a>
                 </p>
 
-                <p><?= $note['body'] ?></p>
+                <p><?= htmlspecialchars($note['body']) ?></p>
             </div>
         </main>
 
