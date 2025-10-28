@@ -20,7 +20,7 @@ if(!Validator::string($password)){
 }
 
 if(! empty($errors)){
-    return view('sessions/create.view.php', [
+    return view('session/create.view.php', [
         'errors' => $errors
     ]);
 }
@@ -29,25 +29,20 @@ $user = $db->query('select * from users where email = :email', [
     'email' => $email
 ])->find();
 
-if(! $user){
-    return view('sessions/create.view.php',[
-        'errors' => [
-            'email' => 'No matching account for that email'
-        ]
-    ]);
-}
+if($user){
+    if(password_verify($password, $user['password'])){
+        login([
+            'email' => $email
+        ]);
 
-if(password_verify($password, $user['password'])){
-    login([
-        'email' => $email
-    ]);
-
-    header('location: /');
-    exit();
+        header('location: /');
+        exit();
+    }
 }
 
 
-return view('sessions/create.view.php',[
+
+return view('session/create.view.php',[
     'errors' => [
         'email' => 'No matching account for that email and password'
     ]
