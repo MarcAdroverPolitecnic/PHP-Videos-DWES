@@ -2,31 +2,44 @@
 
 class Playlist{
 
-    public $name;
-    public $songs;
+    /** @param Song[] $songs
+     *
+     * */
+
+    public String $name;
+    public array $songs;
 
     public function __construct($name, $songs){
+        $this->songs = $songs;
+        $this->name = $name;
 
-        $this ->name = $name;
-        $this ->songs = $songs;
     }
 
-    public function shuffle(){
-        shuffle($this -> songs);
+}
+
+class Song{
+    public string $artist;
+    public string $name;
+
+    public function __construct(string $name, string $artist){
+        $this->name = $name;
+        $this->artist = $artist;
+
     }
 }
 
-    $playlist = [];
+    $songs = [
+        new Song("My heart will go on", "Lukas Muebles"),
+        false,
+        "sddasda",
+        null
+    ];
 
+    $playlist = new Playlist("80 headbangers", $songs);
 
-    $playlist[] = new Playlist("80 headbangers", [
-        "back in black",
-        "are you ready"
-    ]);
-
-
-    $playlist[0]-> shuffle();
-    die(var_dump($playlist));
+    foreach ($playlist->songs as $song){
+        echo $song->artist;
+    }
 
 
 
