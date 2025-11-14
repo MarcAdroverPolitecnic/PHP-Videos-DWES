@@ -1,7 +1,11 @@
 <?php
 
+interface canBeLiked{
+    public function like();
+    public function isLiked();
+}
 
-class Comment{
+class Comment implements canBeLiked {
     public function like(){
         echo "Like the comment";
     }
@@ -11,7 +15,7 @@ class Comment{
     }
 }
 
-class Post{
+class Post implements canBeLiked{
     public function like(){
         echo "Like the post";
     }
@@ -31,6 +35,7 @@ class Thread{
 class PerformLike{
 
     public function handle($model){
+
         if($model->isLiked()){
            return;
         }
@@ -39,4 +44,4 @@ class PerformLike{
     }
 }
 
-(new PerformLike())->handle(new Thread);
+(new PerformLike())->handle(new Comment);
